@@ -21,6 +21,10 @@ image-deleter! This utility does the hard work for you. It queries the registry'
 docker exec -it registry bin/registry garbage-collect /etc/docker/registry/config.yml
 ```
 
+### 📝 To-Do
+- Bundle deletion and garbage collection into one step?
+- ...
+
 ### 📚 References
 - [HTTP API V2 docs](https://docs.docker.com/registry/spec/api/)
 - [Registry garbage collection](https://docs.docker.com/registry/garbage-collection/)
