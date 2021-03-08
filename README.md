@@ -5,20 +5,22 @@
   Command line utility to delete images from a private V2 Docker registry filesystem.
 </p>
 
-## ❗ Problem
+### ❗ Problem
 Your private Docker registry host is getting full, and there's no easy way to delete images from the filesystem. 
 
-## 💡 Solution
-image-deleter! This utility does the hard work for you. It queries the registry's API to mark image blobs for deletion, then runs garbage collection on the registry to remove images from disk.
+### 💡 Solution
+image-deleter! This utility does the hard work for you. It queries the registry's API to mark image blobs for deletion, <s>then runs garbage collection on the registry to remove images from disk.</s>
 
-## 🛠 Installation
-1. Checkout/clone this repository
-2. `pip install -r requirements.txt`
-3. ...
+### 🚀 Usage
+1. Run the script, marking as many images as you like for deletion
+```shell
+./deleter.py --reg_ip=X.X.X.X my-repo:latest my-repo:ver2 ...
+```
+3. Run garbage collection on the registry host
+```shell
+docker exec -it registry bin/registry garbage-collect /etc/docker/registry/config.yml
+```
 
-## 🚀 Usage
-...
-
-## 📚 References
+### 📚 References
 - [HTTP API V2 docs](https://docs.docker.com/registry/spec/api/)
 - [Registry garbage collection](https://docs.docker.com/registry/garbage-collection/)
