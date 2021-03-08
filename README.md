@@ -16,7 +16,7 @@ image-deleter! This utility does the hard work for you. It queries the registry'
 ```shell
 ./deleter.py --reg_ip=X.X.X.X my-repo:latest my-repo:ver2 ...
 ```
-3. Run garbage collection on the registry host
+2. Run garbage collection on the registry host
 ```shell
 docker exec -it registry bin/registry garbage-collect /etc/docker/registry/config.yml
 ```
